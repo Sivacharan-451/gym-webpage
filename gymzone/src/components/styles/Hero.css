@@ -1,0 +1,123 @@
+.hero{
+    position: relative;
+    height:100vh;
+    width: 100%;
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-rS6W7RZ48tOZikKlUJb7TMcy-1njzW1Ndxof_2N7Ng&s=10")
+    center/cover no-repeat ;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.hero::before{
+      content:"";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2));
+}
+.hero-overlay{
+    position: relative;
+    text-align: center;
+    color:white;
+    padding: 0 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+.hero-title{
+     font-size: 3.5rem;
+     letter-spacing: 3px;
+     font-weight: 800;
+     text-transform: uppercase;
+     margin-bottom: 20px;
+     color:#fff;
+     text-shadow: 0 0 25px rgba(255, 102, 0, 0.8);
+     animation: floatText 3s ease-in-out infinite;
+
+}
+.hero-title span{
+    color: #ff6600;
+    text-shadow: 0 0 30px #ff6600;
+}
+.hero-subtitle{
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+.hero-buttons{
+    display: flex;
+    justify-content: center;
+    gap:20px;
+}
+.btn-primary,.btn-secondary{
+    padding: 14px 40px;
+    border-radius: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+
+}
+.btn-primary{
+    background: #ff6600;
+    border:none;
+    color:white;
+    box-shadow: 0 0 20px #ff6600;
+}
+.btn-secondary{
+    background: #ff6600;
+    color:white;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ff6600;
+}
+.btn-primary:hover{
+    background: #0b973e;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px blue;
+}
+.btn-secondary:hover{
+    background: #0f119e;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px green;
+}
+@keyframes fadeIn {
+    from{
+        opacity:0;
+        transform: translateY(50px);
+    }
+    
+}
+@keyframes floatText {
+    0%,
+    100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+}
+@media(max-width: 768px){
+    .hero-title{
+        font-size: 2.2rem;
+    }
+    .hero-subtitle{
+        font-size: 1rem;
+
+    }
+    .hero-buttons{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .btn-primary,.btn-secondary{
+        width: 80%;
+        margin:0 auto;
+    }
+    .nav-links{
+        display: none;
+
+    }
+    .hero h1{
+        font-size: 2rem;
+    }
+}
